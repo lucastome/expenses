@@ -6,7 +6,11 @@ class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
   final void Function(String) onRemove;
 
-  TransactionList(this.transactions, this.onRemove);
+  const TransactionList(
+    this.transactions,
+    this.onRemove, {
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +40,7 @@ class TransactionList extends StatelessWidget {
               final tr = transactions[index];
               return Card(
                 elevation: 5,
-                margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+                margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 5),
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Theme.of(context).primaryColor,
@@ -46,7 +50,7 @@ class TransactionList extends StatelessWidget {
                       child: FittedBox(
                         child: Text(
                           'R\$${tr.value}',
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
