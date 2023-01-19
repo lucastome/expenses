@@ -33,6 +33,8 @@ class ExpensesApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        buttonTheme: ButtonThemeData(
+            buttonColor: Colors.amber, textTheme: ButtonTextTheme.primary),
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
             fontFamily: 'OpenSans',
@@ -78,7 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
       value: value,
       date: date,
     );
-
     setState(() {
       _transactions.add(newTransaction);
     });
